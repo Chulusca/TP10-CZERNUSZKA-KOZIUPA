@@ -1,0 +1,58 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container mt-5">
+    <!-- Tarjeta (Card) para mostrar información de la serie -->
+    <div class="card">
+        <img src="ruta_de_la_imagen.jpg" class="card-img-top" alt="Nombre de la Serie">
+        <div class="card-body">
+            <h5 class="card-title">Nombre de la Serie</h5>
+            <p class="card-text">Descripción de la serie.</p>
+            <!-- Botón para abrir información de la serie en un modal -->
+            <button class="btn btn-primary" data-toggle="modal" data-target="#serieModal">Ver Información de la Serie</button>
+            <!-- Botón para ver información de los actores y temporadas -->
+            <button class="btn btn-info" data-toggle="modal" data-target="#actoresTemporadasModal">Ver Actores y Temporadas</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para mostrar información de la serie -->
+<div class="modal fade" id="serieModal" tabindex="-1" role="dialog" aria-labelledby="serieModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="serieModalLabel">Información de la Serie</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Aquí puedes agregar detalles adicionales de la serie -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para mostrar información de actores y temporadas -->
+<div class="modal fade" id="actoresTemporadasModal" tabindex="-1" role="dialog" aria-labelledby="actoresTemporadasModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="actoresTemporadasModalLabel">Actores y Temporadas</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Aquí puedes agregar información sobre los actores y temporadas de la serie -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
