@@ -10,13 +10,20 @@ namespace TP10_CZERNUSZKA_KOZIUPA.Models;
 public static class BD{
     private static string _connectionString = @"Server=localhost;DataBase=BDSeries;Trusted_Connection=True;";
 
-    public static List<Usuario> ObtenerSeries(){
-        List<Usuario> listaSeries = null;
+    public static List<Series> ObtenerSeries(){
+        List<Series> listaSeries = null;
         using(SqlConnection BD = new SqlConnection(_connectionString)){
             string sql = "SELECT * FROM Series";
-            listaUsuarios = BD.Query<Usuario>(sql).ToList();
+            listaSeries = BD.Query<Series>(sql).ToList();
         }
-        return listaUsuarios;
+        return listaSeries;
+    }
+    public static List<Temporadas> ObtenerTemporada(int IdSerie){
+        Temporadas temporada = null;
+        using(SqlConnection BD = new SqlConnection(_connectionString)){
+            string sql = "SELECT * FROM Temporadas WHERE IdSerie = @IdSerie";
+            temporada = BD.QueryFirstOrDefault<Temporadas>(sql)
+        }
     }
 
 }

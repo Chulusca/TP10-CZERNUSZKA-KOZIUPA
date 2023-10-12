@@ -1,0 +1,9 @@
+namespace TP10_CZERNUSZKA_KOZIUPA.Models;
+
+public class Series{
+    public int IdSerie {get;set;}
+    public string Nombre {get;set;}
+    public int AnoInicio {get;set;}
+    public string Sinopsis {get;set;}
+    public string ImagenSerie {get;set;}
+}
