@@ -18,12 +18,13 @@ public static class BD{
         }
         return listaSeries;
     }
-    public static List<Temporadas> ObtenerTemporada(int IdSerie){
+    public static Temporadas ObtenerTemporada(int IdSerie){
         Temporadas temporada = null;
         using(SqlConnection BD = new SqlConnection(_connectionString)){
             string sql = "SELECT * FROM Temporadas WHERE IdSerie = @IdSerie";
-            temporada = BD.QueryFirstOrDefault<Temporadas>(sql)
+            temporada = BD.QueryFirstOrDefault<Temporadas>(sql, new {IdSerie = IdSerie});
         }
+        return temporada;
     }
 
 }

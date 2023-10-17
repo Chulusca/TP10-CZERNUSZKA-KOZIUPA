@@ -23,6 +23,9 @@ public class HomeController : Controller
     {
         return View();
     }
+    public Series MostrarSerieAjax(int IdSerie){
+        return //FALTA LA FUNCION
+    }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
