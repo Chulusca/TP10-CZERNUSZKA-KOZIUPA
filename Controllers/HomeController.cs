@@ -24,7 +24,13 @@ public class HomeController : Controller
         return View();
     }
     public Series MostrarSerieAjax(int IdSerie){
-        return //FALTA LA FUNCION
+        return BD.ObtenerSerie(IdSerie);
+    }
+    public Temporadas MostrarTemporadasAjax(int IdSerie){
+        return BD.ObtenerTemporadas(IdSerie);
+    }
+    public Actores MostrarActoresAjax(int IdSerie){
+        return BD.ObtenerActores(IdSerie);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
