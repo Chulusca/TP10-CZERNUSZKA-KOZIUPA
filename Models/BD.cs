@@ -24,7 +24,7 @@ public static class BD{
             string sql = "SELECT * FROM Temporadas WHERE IdSerie = @IdSerie";
             temporadas = BD.Query<Temporadas>(sql, new {IdSerie = IdSerie}).ToList();
         }
-        return temporada;
+        return temporadas;
     }
     public static Series ObtenerSerie(int IdSerie){
         Series serie = null;
@@ -38,8 +38,8 @@ public static class BD{
         List<Actores> actores = null;
         using(SqlConnection BD = new SqlConnection(_connectionString)){
             string sql = "SELECT * FROM Actores WHERE IdSerie = @IdSerie";
-            actores = BD.Query<Actores>(sql, new {IdSerie = IdSerie}); 
+            actores = BD.Query<Actores>(sql, new {IdSerie = IdSerie}).ToList(); 
         }
-        return actores
+        return actores;
     }
 }

@@ -26,10 +26,10 @@ public class HomeController : Controller
     public Series MostrarSerieAjax(int IdSerie){
         return BD.ObtenerSerie(IdSerie);
     }
-    public Temporadas MostrarTemporadasAjax(int IdSerie){
+    public List<Temporadas> MostrarTemporadasAjax(int IdSerie){
         return BD.ObtenerTemporadas(IdSerie);
     }
-    public Actores MostrarActoresAjax(int IdSerie){
+    public List<Actores> MostrarActoresAjax(int IdSerie){
         return BD.ObtenerActores(IdSerie);
     }
 
