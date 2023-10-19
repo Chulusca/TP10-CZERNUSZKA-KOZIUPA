@@ -23,8 +23,12 @@ public class HomeController : Controller
     {
         return View();
     }
-    public Series MostrarSerieAjax(int IdSerie){
-        return BD.ObtenerSerie(IdSerie);
+    public List<string> MostrarInfoAjax(int IdSerie){
+        List<Actores> listaactores = BD.ObtenerActores(IdSerie);
+        List<Temporadas> listatemporadas = BD.ObtenerTemporadas(IdSerie);
+        List<string> info = new List<string>();
+        info.Add("la cantidad de actores de la serie es de "+(listaactores.Count) +" y la cantidad de temporadas es de "+(listatemporadas.Count));
+        return info;
     }
     public List<Temporadas> MostrarTemporadasAjax(int IdSerie){
         return BD.ObtenerTemporadas(IdSerie);

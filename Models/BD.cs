@@ -26,14 +26,6 @@ public static class BD{
         }
         return temporadas;
     }
-    public static Series ObtenerSerie(int IdSerie){
-        Series serie = null;
-        using(SqlConnection BD = new SqlConnection(_connectionString)){
-            string sql = "SELECT * FROM Series WHERE IdSerie = @IdSerie";
-            serie = BD.QueryFirstOrDefault<Series>(sql, new {IdSerie = IdSerie});
-        }
-        return serie;
-    }
     public static List<Actores> ObtenerActores(int IdSerie){
         List<Actores> actores = null;
         using(SqlConnection BD = new SqlConnection(_connectionString)){
